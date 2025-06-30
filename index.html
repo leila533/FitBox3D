@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitBox3D</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📦 FitBox3D</h1>
+    <p>Calculadora inteligente de contêineres</p>
+  </header>
+
+  <main>
+    <section class="container-section">
+      <h2>Dados do Contêiner</h2>
+      <label for="container-type">Tipo:</label>
+      <select id="container-type" name="container-type" aria-label="Tipo de contêiner">
+        <option value="20">20 pés (5.9m x 2.35m x 2.39m)</option>
+        <option value="40">40 pés (12.03m x 2.35m x 2.39m)</option>
+        <option value="40hc">40 HC (12.03m x 2.35m x 2.69m)</option>
+        <option value="custom">Personalizado</option>
+      </select>
+
+      <div id="custom-container-inputs" class="hidden">
+        <label>
+          Comprimento (m):
+          <input type="number" id="custom-length" step="0.01" min="0" />
+        </label>
+        <label>
+          Largura (m):
+          <input type="number" id="custom-width" step="0.01" min="0" />
+        </label>
+        <label>
+          Altura (m):
+          <input type="number" id="custom-height" step="0.01" min="0" />
+        </label>
+        <label>
+          Capacidade máxima (kg):
+          <input type="number" id="custom-max-weight" step="0.01" min="0" />
+        </label>
+      </div>
+
+      <label>
+        Custo por contêiner (R$):
+        <input type="number" id="container-cost" step="0.01" min="0" value="0" />
+      </label>
+    </section>
+
+    <section class="boxes-section">
+      <h2>Caixas a carregar</h2>
+      <div id="boxes-container"></div>
+      <button id="add-box-btn" aria-label="Adicionar caixa">➕ Adicionar caixa</button>
+    </section>
+
+    <button id="calculate-btn" aria-label="Calcular carregamento" disabled>Calcular carregamento</button>
+    <button id="export-btn" aria-label="Exportar resultados CSV">Exportar CSV</button>
+
+    <section id="results" class="hidden" aria-live="polite">
+      <h2>📊 Resultado</h2>
+      <div id="result-output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

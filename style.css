@@ -1,0 +1,215 @@
+/* Reset e configuração geral */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f4f6ff;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(90deg, #5e4b8b, #2f3c9c);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0 0 0.3rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Conteúdo principal */
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 1rem auto 3rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgb(94 75 139 / 0.15);
+}
+
+h2 {
+  color: #5e4b8b;
+  border-bottom: 2px solid #7a6dbf;
+  padding-bottom: 6px;
+  margin-bottom: 1rem;
+}
+
+.container-section,
+.boxes-section {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs e selects */
+input[type="number"],
+select {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 0.7rem;
+  border: 1.8px solid #aaa;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #5e4b8b;
+  outline: none;
+}
+
+/* Inputs personalizados do container */
+#custom-container-inputs {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+/* Lista de caixas */
+#boxes-container {
+  margin-top: 1rem;
+}
+
+.box-card {
+  background: #f0f0ff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 4px #bbb;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+
+.box-card label {
+  max-width: 150px;
+  margin-bottom: 0;
+  flex: 1 1 140px;
+}
+
+.box-card input {
+  max-width: 100px;
+  padding: 0.4rem 0.6rem;
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Botão de remover caixa */
+.remove-box-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #cc4b5f;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.3s ease;
+}
+
+.remove-box-btn:hover {
+  background: #a43746;
+}
+
+/* Botões principais */
+button#add-box-btn,
+button#calculate-btn {
+  background-color: #5e4b8b;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+button#add-box-btn:hover,
+button#calculate-btn:hover:not(:disabled) {
+  background-color: #4a3a75;
+}
+
+button#calculate-btn:disabled {
+  background-color: #9b95c1;
+  cursor: not-allowed;
+}
+
+/* Resultados */
+#results {
+  margin-top: 2rem;
+  background: #eef0ff;
+  border-radius: 10px;
+  padding: 1.4rem 1.8rem;
+  box-shadow: inset 0 0 10px #bbb8ff88;
+}
+
+#result-output p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3b2d6e;
+}
+
+/* Visualização 2D */
+#visualization-section {
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+
+  input[type="number"],
+  select {
+    max-width: 100%;
+  }
+
+  .box-card label {
+    display: block;
+  }
+
+  .box-card input {
+    margin-bottom: 0.7rem;
+    width: 100%;
+    max-width: none;
+  }
+}
